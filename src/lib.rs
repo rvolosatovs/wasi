@@ -358,6 +358,7 @@ pub mod exports {
 }
 
 pub use bindings::{wit_future, wit_stream};
+pub use wit_bindgen_rt::async_support;
 
 // These macros are used by recursive invocations of the macro, but they're
 // `#[doc(hidden)]` as it's not part of the public interface.
