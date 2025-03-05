@@ -1,6 +1,0 @@
-package rust:wasi;
-
-world bindings {
-  include wasi:cli/imports@0.3.0;
-  import wasi:http/handler@0.3.0-draft;
-}
