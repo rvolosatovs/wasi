@@ -357,6 +357,8 @@ pub mod exports {
     pub use crate::proxy::exports::wasi::http;
 }
 
+pub use bindings::{wit_future, wit_stream};
+
 // These macros are used by recursive invocations of the macro, but they're
 // `#[doc(hidden)]` as it's not part of the public interface.
 #[doc(hidden)]
