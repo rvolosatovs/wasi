@@ -24,8 +24,8 @@ wasi = { version = "0.14", path = ".", default-features = false }
 members = ["./crates/*"]
 
 [dependencies]
-wit-bindgen = { git = "https://github.com/rvolosatovs/wit-bindgen", branch = "feat/rust-guest-waker", optional = true }
-wit-bindgen-rt = { git = "https://github.com/rvolosatovs/wit-bindgen", branch = "feat/rust-guest-waker", features = ["bitflags"] }
+wit-bindgen = { git = "https://github.com/rvolosatovs/wit-bindgen", branch = "feat/p3", optional = true }
+wit-bindgen-rt = { git = "https://github.com/rvolosatovs/wit-bindgen", branch = "feat/p3", features = ["bitflags"] }
 
 # When built as part of libstd
 compiler_builtins = { version = "0.1", optional = true }
