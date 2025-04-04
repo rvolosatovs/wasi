@@ -252,6 +252,7 @@ mod proxy {
             "wasi:clocks/monotonic-clock@0.3.0": crate::clocks::monotonic_clock,
             "wasi:clocks/wall-clock@0.3.0": crate::clocks::wall_clock,
             "wasi:random/random@0.3.0": crate::random::random,
+            "wasi:http/types@0.3.0-draft": crate::http::types,
         },
     });
 }
