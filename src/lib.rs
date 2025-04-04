@@ -192,6 +192,7 @@ mod bindings {
                  "wasi:sockets/types@0.3.0#[method]tcp-socket.send",
                  "wasi:sockets/types@0.3.0#[method]udp-socket.receive",
                  "wasi:sockets/types@0.3.0#[method]udp-socket.send",
+                 "wasi:http/handler@0.3.0-draft#handle",
              ],
         },
         generate_all,
@@ -242,7 +243,10 @@ mod proxy {
         export_macro_name: "_export_proxy",
         async: {
              exports: [
-                 "wasi:http/handler@0.3.0#handle",
+                 "wasi:http/handler@0.3.0-draft#handle",
+             ],
+             imports: [
+                 "wasi:http/handler@0.3.0-draft#handle",
              ],
         },
         with: {
