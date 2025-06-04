@@ -182,19 +182,17 @@ extern crate std;
 mod bindings {
     wit_bindgen::generate!({
         default_bindings_module: "wasi",
-        async: {
-             imports: [
-                 "wasi:clocks/monotonic-clock@0.3.0#wait-for",
-                 "wasi:clocks/monotonic-clock@0.3.0#wait-until",
-                 "wasi:filesystem/types@0.3.0#[method]descriptor.write-via-stream",
-                 "wasi:sockets/ip-name-lookup@0.3.0#resolve-addresses",
-                 "wasi:sockets/types@0.3.0#[method]tcp-socket.connect",
-                 "wasi:sockets/types@0.3.0#[method]tcp-socket.send",
-                 "wasi:sockets/types@0.3.0#[method]udp-socket.receive",
-                 "wasi:sockets/types@0.3.0#[method]udp-socket.send",
-                 "wasi:http/handler@0.3.0-draft#handle",
-             ],
-        },
+        async: [
+            "wasi:clocks/monotonic-clock@0.3.0#wait-for",
+            "wasi:clocks/monotonic-clock@0.3.0#wait-until",
+            "wasi:filesystem/types@0.3.0#[method]descriptor.write-via-stream",
+            "wasi:sockets/ip-name-lookup@0.3.0#resolve-addresses",
+            "wasi:sockets/types@0.3.0#[method]tcp-socket.connect",
+            "wasi:sockets/types@0.3.0#[method]tcp-socket.send",
+            "wasi:sockets/types@0.3.0#[method]udp-socket.receive",
+            "wasi:sockets/types@0.3.0#[method]udp-socket.send",
+            "wasi:http/handler@0.3.0-draft#handle",
+        ],
         generate_all,
     });
 }
@@ -206,11 +204,9 @@ mod command {
         default_bindings_module: "wasi",
         pub_export_macro: true,
         export_macro_name: "_export_command",
-        async: {
-             exports: [
-                 "wasi:cli/run@0.3.0#run",
-             ],
-        },
+        async: [
+            "wasi:cli/run@0.3.0#run",
+        ],
         with: {
             "wasi:cli/environment@0.3.0": crate::cli::environment,
             "wasi:cli/exit@0.3.0": crate::cli::exit,
@@ -241,14 +237,9 @@ mod proxy {
         default_bindings_module: "wasi",
         pub_export_macro: true,
         export_macro_name: "_export_proxy",
-        async: {
-             exports: [
-                 "wasi:http/handler@0.3.0-draft#handle",
-             ],
-             imports: [
-                 "wasi:http/handler@0.3.0-draft#handle",
-             ],
-        },
+        async: [
+            "wasi:http/handler@0.3.0-draft#handle",
+        ],
         with: {
             "wasi:cli/stderr@0.3.0": crate::cli::stderr,
             "wasi:cli/stdin@0.3.0": crate::cli::stdin,
