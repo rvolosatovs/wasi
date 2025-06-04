@@ -24,8 +24,8 @@ wasi = { version = "0.14", path = ".", default-features = false }
 members = ["./crates/*"]
 
 [dependencies]
-wit-bindgen = { git = "https://github.com/bytecodealliance/wit-bindgen", optional = true }
-wit-bindgen-rt = { git = "https://github.com/bytecodealliance/wit-bindgen", features = ["bitflags"] }
+wit-bindgen = { git = "https://github.com/bytecodealliance/wit-bindgen", rev = "98772fbf15abc0c1ea6b9d8eb444990d2e0b3d80", optional = true }
+wit-bindgen-rt = { git = "https://github.com/bytecodealliance/wit-bindgen", rev = "98772fbf15abc0c1ea6b9d8eb444990d2e0b3d80", features = ["bitflags"] }
 
 # When built as part of libstd
 compiler_builtins = { version = "0.1", optional = true }
